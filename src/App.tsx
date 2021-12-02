@@ -1,3 +1,5 @@
+import { EmployeesList } from "examples/constants";
+
 import Employee from "./components/Employee";
 
 function App() {
@@ -16,7 +18,7 @@ function App() {
         </div>
 
         <ul>
-          <Employee />
+          <Employee data={EmployeesList[6]} />
         </ul>
       </div>
     </div>
