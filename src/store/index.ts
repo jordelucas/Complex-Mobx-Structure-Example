@@ -37,6 +37,12 @@ class Employee {
     this.dependents.set(newDependent.id, newDependent);
   }
 
+  updateDependent = (id: string, name: string, relationship: string) => {
+    const updatedDependent = new Dependent(id, name, relationship);
+
+    this.dependents.set(id, updatedDependent);
+  }
+
   get dependentsList() {
     return Array.from(this.dependents.values());
   }
@@ -56,9 +62,21 @@ class EmployeeStore {
   }
   
   addDependent = (id: string, name: string, relationship: string) => {
-    const temp = this.employees.get(id);
+    const filteredEmployee = this.employees.get(id);
 
-    if (temp) temp.addDependent(name, relationship);
+    if (filteredEmployee) filteredEmployee.addDependent(name, relationship)
+  }
+
+  updateDependent = (
+    idEmployee: string,
+    idDependent: string,
+    name: string,
+    relationship: string,
+  ) => {
+    const filteredEmployee = this.employees.get(idEmployee);
+
+    if (filteredEmployee) 
+      filteredEmployee.updateDependent(idDependent, name, relationship)
   }
 
   getEmployee = (id: string) => {

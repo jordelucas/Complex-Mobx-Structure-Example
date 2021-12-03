@@ -53,7 +53,11 @@ const Employee = observer(({ data }: EmployeeProps) => {
 
         <ul style={{ marginTop: "16px" }}>
           {EmployeeStore.getEmployee(data.id)?.dependentsList.map(dependent => (
-            <Dependent key={dependent.id} data={dependent} />
+            <Dependent
+              key={dependent.id}
+              data={dependent}
+              idEmployee={data.id}
+            />
           ))}
         </ul>
       </div>
