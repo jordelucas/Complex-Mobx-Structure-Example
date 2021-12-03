@@ -51,45 +51,45 @@ export const EmployeesList = [
   },
 ]
 
-export const DependentsList = {
-  1: {
+export const DependentsList = [
+  {
     name: 'David',
     relationship: 'soon',
   },
-  2: {
+  {
     name: 'Barbara',
     relationship: 'daughter',
   },
-  3: {
+  {
     name: 'Richard',
     relationship: 'soon',
   },
-  4: {
+  {
     name: 'Susan',
     relationship: 'daughter',
   },
-  5: {
+  {
     name: 'Joseph',
     relationship: 'soon',
   },
-  6: {
+  {
     name: 'Jessica',
     relationship: 'daughter',
   },
-  7: {
+  {
     name: 'Thomas',
     relationship: 'soon',
   },
-  8: {
+  {
     name: 'Sarah',
     relationship: 'daughter',
   },
-  9: {
+  {
     name: 'Charles',
     relationship: 'soon',
   },
-  10: {
+  {
     name: 'Karen',
     relationship: 'daughter',
   },
-}
+]

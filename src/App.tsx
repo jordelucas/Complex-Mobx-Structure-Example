@@ -12,7 +12,7 @@ const App = observer(() => {
   const EmployeeStore = useContext(EmployeeStoreContext);
 
   const handleOnClick = () => {
-    const random = Math.floor(Math.random() * 10) + 1;
+    const random = Math.floor(Math.random() * 10);
 
     const selectedEmployee = EmployeesList[random];
 
@@ -38,7 +38,7 @@ const App = observer(() => {
         </div>
 
         <ul>
-          {EmployeeStore.employees.map(employee => (
+          {EmployeeStore.employeesList.map(employee => (
             <Employee key={employee.id} data={employee} />
           ))}
         </ul>
