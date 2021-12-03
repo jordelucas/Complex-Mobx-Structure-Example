@@ -29,6 +29,10 @@ const Dependent = ({ data, idEmployee }: DependentProps) => {
     );
   };
 
+  const handleOnClickToDelete = () => {
+    EmployeeStore.deleteDependent(idEmployee, data.id);
+  };
+
   return (
     <li style={{ display: "grid", marginBottom: "24px" }}>
       <strong>
@@ -41,7 +45,7 @@ const Dependent = ({ data, idEmployee }: DependentProps) => {
 
       <div>
         <button onClick={handleOnClickToUpdate}>update</button>
-        <button>delete</button>
+        <button onClick={handleOnClickToDelete}>delete</button>
       </div>
     </li>
   )

@@ -43,6 +43,10 @@ class Employee {
     this.dependents.set(id, updatedDependent);
   }
 
+  deleteDependent = (id: string) => {
+    this.dependents.delete(id);
+  }
+
   get dependentsList() {
     return Array.from(this.dependents.values());
   }
@@ -77,6 +81,12 @@ class EmployeeStore {
 
     if (filteredEmployee) 
       filteredEmployee.updateDependent(idDependent, name, relationship)
+  }
+  
+  deleteDependent = (idEmployee: string, idDependent: string) => {
+    const filteredEmployee = this.employees.get(idEmployee);
+
+    if (filteredEmployee) filteredEmployee.deleteDependent(idDependent);
   }
 
   getEmployee = (id: string) => {
