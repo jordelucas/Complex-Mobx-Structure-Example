@@ -1,5 +1,5 @@
 import { createContext } from 'react';
-import { action, observable } from 'mobx';
+import { action, makeAutoObservable, observable } from 'mobx';
 import { v4 as uuid } from 'uuid';
 
 class Dependent {
@@ -37,22 +37,26 @@ class Employee {
 }
 
 class EmployeeStore {
-  @observable items: Map<string, Employee>;
+  items = new Map<string, Employee>();
 
   constructor() {
-    this.items = new Map<string, Employee>();
-  }
+    makeAutoObservable(this)
+}
 
-  @action addEmployee = (name: string, role: string, created_at: string) => {
+  addEmployee = (name: string, role: string, created_at: string) => {
     const newEmployee = new Employee(uuid(), name, role, created_at);
 
     this.items.set(newEmployee.id, newEmployee);
   }
   
-  @action addDependent = (id: string, name: string, relationship: string) => {
+  addDependent = (id: string, name: string, relationship: string) => {
     const temp = this.items.get(id);
 
     if (temp) temp.addDependent(name, relationship);
+  }
+
+  get employees() {
+    return Array.from(this.items.values());
   }
 }
 

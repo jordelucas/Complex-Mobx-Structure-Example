@@ -1,55 +1,55 @@
-export const EmployeesList = {
-  1: {
+export const EmployeesList = [
+  {
     name: 'James',
     role: 'sales adm',
     created_at: '2012',
   },
-  2: {
+  {
     name: 'Mary',
     role: 'logistics',
     created_at: '2013',
   },
-  3: {
+  {
     name: 'Robert',
     role: 'logistics',
     created_at: '2014',
   },
-  4: {
+  {
     name: 'Patricia',
     role: 'logistics',
     created_at: '2015',
   },
-  5: {
+  {
     name: 'John',
     role: 'sales adm',
     created_at: '2016',
   },
-  6: {
+  {
     name: 'Jennifer',
     role: 'sales adm',
     created_at: '2017',
   },
-  7: {
+  {
     name: 'Michael',
     role: 'logistics',
     created_at: '2018',
   },
-  8: {
+  {
     name: 'Linda',
     role: 'logistics',
     created_at: '2019',
   },
-  9: {
+  {
     name: 'William',
     role: 'logistics',
     created_at: '2020',
   },
-  10: {
+  {
     name: 'Elizabeth',
     role: 'logistics',
     created_at: '2021',
   },
-}
+]
 
 export const DependentsList = {
   1: {
